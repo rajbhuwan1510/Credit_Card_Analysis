@@ -25,30 +25,45 @@ To utilize the Power BI reports, follow these steps:
 ## DAX Queries
 Here are some sample DAX queries used in this project:
 - **AgeGroup**: Categorizes customers into age groups (20-30, 30-40, 40-50, 50-60, 60+).
-   AgeGroup = SWITCH(TRUE(),'public cust_detail'customer_age] < 30, "20-30",'public cust_detail'customer_age] >= 30 && 'public cust_detail'customer_age] < 40, "30-40",'public cust_detail'customer_age] >= 40 && 'public cust_detail'customer_age] < 50, "40-50",'public cust_detail'customer_age] >= 50 && 'public cust_detail'customer_age] < 60, "50-60",'public cust_detail'customer_age] >= 60, "60+","unknown")
+```DAX
+AgeGroup = SWITCH(
+TRUE(),
+'public cust_detail'[customer_age] < 30, "20-30",
+'public cust_detail'[customer_age] >= 30 && 'public cust_detail'[customer_age] < 40, "30-40",
+'public cust_detail'[customer_age] >= 40 && 'public cust_detail'[customer_age] < 50, "40-50",
+'public cust_detail'[customer_age] >= 50 && 'public cust_detail'[customer_age] < 60, "50-60",
+'public cust_detail'[customer_age] >= 60, "60+",
+"unknown"
+)
+```
 - **IncomeGroup**: Categorizes customers based on income levels (Low, Medium, High).
-  - 1. IncomeGroup = SWITCH(
+```DAX
+IncomeGroup = SWITCH(
 TRUE(),
 'public cust_detail'[income] < 35000, "Low",
 'public cust_detail'[income] >= 35000 && 'public cust_detail'[income] <70000, "Med",
 'public cust_detail'[income] >= 70000, "High",
 "unknown"
 )
+```
 - **Revenue**: Calculates total revenue by summing annual fees, transaction amounts, and interest earned.
-  - 1. Revenue = 'public cc_detail'[annual_fees] + 'public cc_detail'[total_trans_amt] + 'public cc_detail'[interest_earned]
+```
+Revenue = 'public cc_detail'[annual_fees] + 'public cc_detail'[total_trans_amt] + 'public cc_detail'[interest_earned]
 - **Current_week_Revenue**: Calculates revenue for the current week.
   - 1. Current_week_Reveneue = CALCULATE(
 SUM('public cc_detail'[Revenue]),
 FILTER(
 ALL('public cc_detail'),
 'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2])))
+```
 - **Previous_week_Revenue**: Calculates revenue for the previous week.
-  - 1. Previous_week_Reveneue = CALCULATE(
+```
+Previous_week_Reveneue = CALCULATE(
 SUM('public cc_detail'[Revenue]),
 FILTER(
 ALL('public cc_detail'),
 'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2])-1))
-
+```
 ## Insights
 Here are some key insights from the project:
 - Week 53 (31st Dec) saw a significant increase in revenue and transaction amounts compared to the previous week.
