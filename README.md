@@ -13,7 +13,7 @@ This project includes two main Power BI dashboards:
 1. **Credit Card Transaction Analysis Dashboard**: Provides insights into credit card transactions, including total revenue, interest earned, quarterly revenue trends, and week-on-week growth measures.
    ![Credit Card Dashboard_page-0001](https://github.com/rajbhuwan1510/Credit_Card_Analysis/assets/92216824/4b6b66ff-757d-426a-b5b1-87d1006eb317)
 3. **Credit Card Customer Report Dashboard**: Focuses on customer demographics, including age and gender distribution, income analysis, and satisfaction score breakdown.
-4. ![Credit Card Dashboard_page-0002](https://github.com/rajbhuwan1510/Credit_Card_Analysis/assets/92216824/a106dbfe-b411-4781-ab6b-e413a7e2ab02)
+ ![Credit Card Dashboard_page-0002](https://github.com/rajbhuwan1510/Credit_Card_Analysis/assets/92216824/a106dbfe-b411-4781-ab6b-e413a7e2ab02)
 
 ## Usage
 To utilize the Power BI reports, follow these steps:
